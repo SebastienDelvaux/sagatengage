@@ -7,6 +7,7 @@ import {
 
 import Overview from './Overview';
 import Project from './project/Project';
+import ProjectEditor from './project/ProjectEditor';
 
 import initialData from './initialData';
 
@@ -25,6 +26,10 @@ export default class App extends Component {
             render={props =>
               <Project {...props} id={Number(props.match.params.id)} />
             }
+          />
+          <Route
+            path="/new/project"
+            component={ProjectEditor}
           />
           <Route
             path="*"

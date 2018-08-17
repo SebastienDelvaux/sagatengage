@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 import Grid from './grid/Grid';
 
@@ -32,6 +33,7 @@ export default class Overview extends Component {
           cols={cols}
           data={this.state.projects}
           rowSelected={this.rowSelectedHandler} />
+        <Link to="/new/project">Add project</Link>
       </div>
     );
   }

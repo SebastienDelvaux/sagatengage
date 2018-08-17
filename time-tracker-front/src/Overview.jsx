@@ -9,7 +9,7 @@ const cols = [
 
 export default class Overview extends Component {
   rowSelectedHandler = (row) => {
-    console.log('row clicked', row);
+    this.props.history.push(`/project/${row.id}`);
   }
 
   render() {

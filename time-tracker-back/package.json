@@ -1,0 +1,13 @@
+{
+  "name": "time-tracker-back",
+  "version": "1.0.0",
+  "description": "NodeJS API for the Time Tracker project",
+  "main": "index.js",
+  "repository": "https://github.com/Sagacify/sagatengage.git",
+  "author": "Sébastien Delvaux <delvaux.sebastien@protonmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}

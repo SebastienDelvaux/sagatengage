@@ -18,6 +18,11 @@ app.get('/projects', (req, res) => {
     res.json(initialData.projects);
 });
 
+app.get('/project/:id', (req, res) => {
+    const id = Number(req.params.id);
+    res.json(initialData.projects.find(project => project.id === id));
+});
+
 app.post('/', async (req, res) => {
     const {duration} = req.body; //retrieving whatever from the body
     res.send({message: `Your duration '${duration}' was successfully entered`});

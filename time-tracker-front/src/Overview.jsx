@@ -2,22 +2,37 @@ import React, {Component} from 'react';
 
 import Grid from './grid/Grid';
 
+import {getProjects} from './api/project/projectServices';
+
 const cols = [
   {key: 'title', label: 'Title'},
   {key: 'description', label: 'Description'},
 ];
 
 export default class Overview extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {projects: []};
+  }
+
+  async componentDidMount() {
+    const data = await getProjects();
+    this.setState({projects: data});
+  }
+
   rowSelectedHandler = (row) => {
     this.props.history.push(`/project/${row.id}`);
   }
 
   render() {
     return (
-      <Grid
-        cols={cols}
-        data={this.props.projects}
-        rowSelected={this.rowSelectedHandler} />
+      <div>
+        <h3>Time Tracker©</h3>
+        <Grid
+          cols={cols}
+          data={this.state.projects}
+          rowSelected={this.rowSelectedHandler} />
+      </div>
     );
   }
 }

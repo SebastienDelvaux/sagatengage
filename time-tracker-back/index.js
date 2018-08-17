@@ -8,8 +8,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const port = 3030;
 
+const initialData = require('./initialData').initialData;
+
 app.get('/', (req, res) => {
   res.json({ message: 'Hooray! welcome to our api!'});
+});
+
+app.get('/projects', (req, res) => {
+    res.json(initialData.projects);
 });
 
 app.post('/', async (req, res) => {
